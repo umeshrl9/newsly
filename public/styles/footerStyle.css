@@ -1,0 +1,39 @@
+footer{
+    background-color: red !important;
+}
+
+footer {
+    text-align: center;
+    margin-top: -5px;
+}
+
+footer ul {
+    padding-top: 8%;
+    padding-bottom: 5%;
+}
+
+footer ul li {
+    display: inline-block;
+    width: 8%;
+}
+
+footer svg {
+    color: inherit;
+}
+
+footer h3 {
+    font-family: 'IBM Plex Sans Condensed', sans-serif;
+    color: rgb(255, 255, 255);
+    padding: 10px;
+    text-align: center;
+}
+
+footer h4 {
+    color: rgb(231, 235, 235);
+    padding: 5px;
+    font-family: 'IBM Plex Sans Condensed';
+}
+
+footer h4 a {
+    color: rgb(231, 235, 235);
+}
