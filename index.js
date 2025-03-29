@@ -11,6 +11,10 @@ app.get("/", (req, res) => {
     res.render("index.ejs", {year: new Date().getFullYear()});
 });
 
+app.get("/about-us", (req, res) => {
+    res.render("about.ejs", {year: new Date().getFullYear()});
+});
+
 //to give 404 for invalid get requests
 app.use((req, res) => {
     res.status(404).render('notfound.ejs', {year: new Date().getFullYear()});
