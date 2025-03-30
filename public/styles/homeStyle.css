@@ -1,0 +1,74 @@
+.articles {
+    margin: 5%;
+    margin-left: 2%;
+    margin-right: 2%;
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping to the next line */
+    gap: 20px; /* Adds spacing between cards */
+    justify-content: space-between; /* Distributes space evenly */
+}
+
+.news-card {
+    width: 28%; /* Ensures three cards per row */
+    padding: 2%;
+    background-color: white;
+    color: black;
+    box-sizing: border-box; /* Ensures padding doesn’t increase width */
+    border-radius: 30px;
+    margin-bottom: 5%;
+    position: relative;
+    height: 630px;
+    font-family: "IBM Plex Sans Condensed", sans-serif;
+}
+
+.news-card h2{
+    margin-bottom: 5%;
+}
+
+form h3{
+    display: inline-block;
+    color: white;
+    font-family: "IBM Plex Sans Condensed", sans-serif;
+    padding: 3px;
+}
+
+form{
+    margin-left: 3%;
+    margin-right: 2%;
+    display: flex;
+    flex-direction: flex-end;
+}
+
+form select{
+    background-color: aqua;
+    color: black;
+    padding: 5px;
+    font-family: "IBM Plex Sans Condensed", sans-serif;
+}
+
+.submit{
+    background-color: red;
+    color: white;
+    font-family: "IBM Plex Sans Condensed", sans-serif;
+    border-radius: 5px;
+    margin-left: 30px;
+}
+
+button.submit { 
+    padding: 5px;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+.news-card:hover{
+    top: -5px;
+}
+.news-card img {
+    margin-bottom: 5%;
+    width: 100%;  /* Make the image take full width of the card */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Crop the image to fit the container */
+    border-radius: 10px; /* Optional: Rounded corners for aesthetics */
+}
