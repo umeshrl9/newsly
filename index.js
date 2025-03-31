@@ -37,7 +37,6 @@ app.get("/home", async (req, res) => {
             (article) => article.urlToImage && article.description
         );
 
-        console.log(topArticles);
 
         res.render("home", { articles: topArticles.slice(0,15), year: new Date().getFullYear()});
     } catch (error) {

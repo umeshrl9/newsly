@@ -37,6 +37,7 @@ form{
     margin-right: 2%;
     display: flex;
     flex-direction: flex-end;
+    font-family: "IBM Plex Sans Condensed", sans-serif;
 }
 
 form select{
@@ -71,4 +72,11 @@ button:hover{
     height: auto; /* Maintain aspect ratio */
     object-fit: cover; /* Crop the image to fit the container */
     border-radius: 10px; /* Optional: Rounded corners for aesthetics */
+}
+
+form label{
+    margin-left: 20px;
+    color: white;
+    font-weight: 800;
+    padding: 5px;
 }
