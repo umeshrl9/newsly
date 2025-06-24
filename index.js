@@ -17,6 +17,7 @@ app.set("view engine", "ejs");
 
 
 const API_KEY = process.env.API_KEY;
+console.log("API_KEY is: ", process.env.API_KEY);
 
 app.get("/home", async (req, res) => {
     const country = req.query.country || "us"; // Default to US
