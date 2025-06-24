@@ -15,39 +15,30 @@ app.get("/", (req, res) => {
 
 app.set("view engine", "ejs");
 
-
-const API_KEY = process.env.API_KEY;
+const GNEWS_API_KEY = process.env.GNEWS_API_KEY;
 
 app.get("/home", async (req, res) => {
-    const country = req.query.country || "us";
-    const category = req.query.category || "";
+  const country = req.query.country || "us";
+  try {
+    const response = await axios.get("https://gnews.io/api/v4/top-headlines", {
+      params: {
+        token: GNEWS_API_KEY,
+        lang: "en",
+        country: country,
+        max: 15
+      }
+    });
 
-    try {
-        const response = await axios.get(`https://newsapi.org/v2/top-headlines`, {
-            params: {
-                apiKey: process.env.API_KEY,
-                country: country,
-                category: category || undefined,
-            },
-        });
+    console.log(response.data);
 
-        console.log("NewsAPI response status:", response.status);
-        console.log("NewsAPI response data:", response.data);
-
-        const topArticles = response.data.articles.filter(
-            (article) => article.urlToImage && article.description
-        );
-
-        res.render("home", { articles: topArticles.slice(0, 15), year: new Date().getFullYear() });
-    } catch (error) {
-        console.error("Error fetching news:", error.message);
-        if (error.response) {
-            console.error("Error status:", error.response.status);
-            console.error("Error data:", error.response.data);
-        }
-        res.render("home", { articles: [], year: new Date().getFullYear() });
-    }
+    const articles = response.data.articles.filter(a => a.image && a.description);
+    res.render("home", { articles, year: new Date().getFullYear() });
+  } catch (err) {
+    console.error("GNews Error:", err.message);
+    res.render("home", { articles: [], year: new Date().getFullYear() });
+  }
 });
+
 
 
 app.get("/about-us", (req, res) => {

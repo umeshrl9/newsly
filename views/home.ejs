@@ -61,17 +61,6 @@
         <option value="ve">Venezuela</option>
     </select>
 
-    <label for="category">Category:</label>
-    <select name="category" id="category">
-        <option value="">All</option>
-        <option value="business">Business</option>
-        <option value="entertainment">Entertainment</option>
-        <option value="health">Health</option>
-        <option value="science">Science</option>
-        <option value="sports">Sports</option>
-        <option value="technology">Technology</option>
-    </select>
-
     <button type="submit" class="submit">Filter</button>
 </form>
 
@@ -80,7 +69,7 @@
     <% if(articles.length != 0){ %> 
         <% articles.forEach(article => { %>
         <div class="news-card">
-            <img src="<%= article.urlToImage %>" alt="news-image" class="news-image">
+            <img src="<%= article.image %>" alt="news-image" class="news-image">
             <h2 class="news-title"><%= article.title %></h3>
             <p class="news-description"><%= article.description || "No description available." %></p>
             <a href="<%= article.url %>" target="_blank" class="read-more">Read More</a>
