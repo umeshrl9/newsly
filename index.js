@@ -29,8 +29,6 @@ app.get("/home", async (req, res) => {
       }
     });
 
-    console.log(response.data);
-
     const articles = response.data.articles.filter(a => a.image && a.description);
     res.render("home", { articles, year: new Date().getFullYear() });
   } catch (err) {
