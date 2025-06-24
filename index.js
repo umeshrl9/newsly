@@ -17,31 +17,34 @@ app.set("view engine", "ejs");
 
 
 const API_KEY = process.env.API_KEY;
-console.log("API_KEY is: ", process.env.API_KEY);
 
 app.get("/home", async (req, res) => {
-    const country = req.query.country || "us"; // Default to US
-    const category = req.query.category || ""; // Empty means all categories
-
+    const country = req.query.country || "us";
+    const category = req.query.category || "";
 
     try {
         const response = await axios.get(`https://newsapi.org/v2/top-headlines`, {
             params: {
-                apiKey: process.env.API_KEY, // Use .env API key
+                apiKey: process.env.API_KEY,
                 country: country,
-                category: category || undefined, // Exclude if empty
+                category: category || undefined,
             },
         });
 
+        console.log("NewsAPI response status:", response.status);
+        console.log("NewsAPI response data:", response.data);
 
         const topArticles = response.data.articles.filter(
             (article) => article.urlToImage && article.description
         );
 
-
-        res.render("home", { articles: topArticles.slice(0,15), year: new Date().getFullYear()});
+        res.render("home", { articles: topArticles.slice(0, 15), year: new Date().getFullYear() });
     } catch (error) {
         console.error("Error fetching news:", error.message);
+        if (error.response) {
+            console.error("Error status:", error.response.status);
+            console.error("Error data:", error.response.data);
+        }
         res.render("home", { articles: [], year: new Date().getFullYear() });
     }
 });
