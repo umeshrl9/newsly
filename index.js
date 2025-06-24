@@ -30,10 +30,10 @@ app.get("/home", async (req, res) => {
     });
 
     const articles = response.data.articles.filter(a => a.image && a.description);
-    res.render("home", { articles, year: new Date().getFullYear() });
+    res.render("home", { articles, country: country, year: new Date().getFullYear() });
   } catch (err) {
     console.error("GNews Error:", err.message);
-    res.render("home", { articles: [], year: new Date().getFullYear() });
+    res.render("home", { articles: [], country: country, year: new Date().getFullYear() });
   }
 });
 

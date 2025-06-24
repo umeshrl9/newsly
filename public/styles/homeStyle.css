@@ -81,6 +81,9 @@ form label{
     padding: 5px;
 }
 
+.news-card{
+  overflow: auto;
+}
 /* Responsive styling */
 
 @media (max-width: 1024px) {
