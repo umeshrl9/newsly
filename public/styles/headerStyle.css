@@ -3,11 +3,17 @@
     padding: 0;
 }
 
-header{
-    margin: 1.5%;
-    background-color: black;
+header {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    flex-wrap: nowrap;
+}
+
+header img {
+    width: 200px;
+    height: auto;
 }
 
 .rightHeader{
@@ -43,4 +49,49 @@ header{
 
 .header-end:hover{
     color: whitesmoke;
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 10px;
+  }
+
+  .leftHeader img {
+    width: 150px;
+  }
+
+  .rightHeader {
+    width: 100%;
+    justify-content: center;
+    margin: 10px 0;
+  }
+
+  .header-end {
+    margin-left: 5%;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .leftHeader img {
+    width: 120px;
+  }
+
+  .header-end {
+    margin-left: 4%;
+    font-size: 14px;
+  }
+}
+
+/* Center logo on mobile */
+@media (max-width: 600px) {
+    header {
+        justify-content: center;
+    }
+
+    header img {
+        width: 160px;
+    }
 }

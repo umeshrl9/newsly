@@ -37,3 +37,40 @@ footer h4 {
 footer h4 a {
     color: rgb(231, 235, 235);
 }
+
+@media (max-width: 768px) {
+  footer ul {
+    padding-top: 10%;
+    padding-bottom: 5%;
+  }
+
+  footer ul li {
+    width: 14%;
+  }
+
+  footer svg {
+    width: 35px;
+    height: 35px;
+  }
+
+  footer h3, footer h4 {
+    font-size: 14px;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  footer ul li {
+    width: 20%;
+  }
+
+  footer svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  footer h3, footer h4 {
+    font-size: 12px;
+    padding: 6px;
+  }
+}

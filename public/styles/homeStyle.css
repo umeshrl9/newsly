@@ -80,3 +80,57 @@ form label{
     font-weight: 800;
     padding: 5px;
 }
+
+/* Responsive styling */
+
+@media (max-width: 1024px) {
+  .news-card {
+    width: 45%; /* Two per row on tablets */
+  }
+}
+
+@media (max-width: 768px) {
+  .articles {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .news-card {
+    width: 90%; /* Single card per row on phones */
+    height: auto;
+    padding: 5%;
+  }
+
+  form {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+  form label {
+    margin-left: 0;
+  }
+
+  form select, 
+  .submit {
+    width: 100%;
+
+    margin: 0;
+  }
+
+  button.submit {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .news-card {
+    width: 100%;
+  }
+
+  .news-card img {
+    height: auto;
+  }
+}
