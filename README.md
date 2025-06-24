@@ -6,10 +6,10 @@ Newsly is an aesthetically designed news platform that curates and delivers top 
 2) Run the following command to install dependencies:  
    ```sh
    npm i
-3) Generate an API key from NewsAPI
+3) Generate an API key from gnews.io
 4) Create a .env file in the project root and add your API key:
    ```sh
-   API_KEY=your_api_key_here
+   GNEWS_API_KEY=your_api_key_here
 5) Start the application:
    ```sh
    node index.js
